@@ -2,7 +2,7 @@
 /Release
 /.settings
 .*project
-
+/.metadata
 # Prerequisites
 *.d
 
@@ -38,3 +38,4 @@
 
 # Shitty Mac Files
 *DS_Store
+

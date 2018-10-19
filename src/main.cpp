@@ -53,7 +53,7 @@ bool secondaryerrorcheck(ALLEGRO_TIMER* timer, ALLEGRO_EVENT_QUEUE* evq, ALLEGRO
 }
 
 int main(int argc, char* argv[]){
-
+	//GIT HUB UPDATE COMMENT
     if(primaryerrorcheck()) // for checking stuff that can be initialized without creating an instance of it.
         return 1;
 
