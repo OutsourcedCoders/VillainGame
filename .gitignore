@@ -4,6 +4,7 @@
 .*project
 /.metadata
 /bin
+/obj
 
 # Prerequisites
 *.d
@@ -43,4 +44,4 @@
 
 # Shitty Code Block files
 *.cbp
-
+*.depend
