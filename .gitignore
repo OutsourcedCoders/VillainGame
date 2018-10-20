@@ -3,6 +3,8 @@
 /.settings
 .*project
 /.metadata
+/bin
+
 # Prerequisites
 *.d
 
@@ -38,4 +40,7 @@
 
 # Shitty Mac Files
 *DS_Store
+
+# Shitty Code Block files
+*.cbp
 
