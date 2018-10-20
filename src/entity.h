@@ -6,15 +6,20 @@ namespace VillainGame{
 	class entity{
 
 	public:
-		virtual ALLEGRO_BITMAP* draw() = 0;
+		ALLEGRO_BITMAP* draw();
 		std::pair<double, double> getLocation();
 		std::pair<double, double> moveTo(std::pair<double, double> coordinates);
 		std::pair<double, double> moveTo(double x, double y);
+		int takeDamage(int damageTaken);
+		bool recoverHealth(int hpRecovered);
 
 	protected:
 		ALLEGRO_BITMAP* sprite;
 		double x;
 		double y;
+		int hp, maxhp;
+		int cost;
+		char team;
 	};
 }
 
