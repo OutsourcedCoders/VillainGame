@@ -1,11 +1,13 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include "tilesystem/tile.h"
+
 namespace VillainGame{
 
 	class entity{
-
 	public:
+		entity();
 		ALLEGRO_BITMAP* draw();
 		std::pair<double, double> getLocation();
 		std::pair<double, double> moveTo(std::pair<double, double> coordinates);
@@ -14,7 +16,7 @@ namespace VillainGame{
 		bool recoverHealth(int hpRecovered);
 
 	protected:
-		ALLEGRO_BITMAP* sprite;
+		tile* sprite;
 		double x;
 		double y;
 		int hp, maxhp;

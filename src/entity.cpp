@@ -4,8 +4,18 @@
 
 namespace VillainGame{
 
+	entity::entity(){
+		sprite = new tile();
+		x = 0.0;
+		y = 0.0;
+		hp = 10;
+		maxhp = hp;
+		cost = 50;
+		team = 0;
+	}
+
 	ALLEGRO_BITMAP* entity::draw(){
-	return sprite;
+		return sprite->draw();
 	}
 
 	std::pair<double, double> entity::getLocation(){

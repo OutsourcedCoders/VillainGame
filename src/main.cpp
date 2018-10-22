@@ -7,8 +7,12 @@
 #include <iostream>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_font.h>
+#include <allegro5/allegro_image.h>
 #include <allegro5/allegro_native_dialog.h>
 #include <allegro5/allegro_primitives.h>
+#include "tilesystem/tile.h"
+#include "tilesystem/spritesheet.h"
+#include "troops/goon.h"
 
 /**
  *
@@ -29,6 +33,11 @@ bool primaryerrorcheck(){
     if(!al_init_primitives_addon()){
         std::cerr << "I couln't initialize the primitives addon!";
         return true;
+    }
+
+    if(!al_init_image_addon()){
+		std::cerr << "I couldn't initialize the images addon!";
+		return true;
     }
     return false;
 }
@@ -67,6 +76,10 @@ int main(int argc, char* argv[]){
     al_register_event_source(evq, al_get_keyboard_event_source());
     al_register_event_source(evq, al_get_timer_event_source(timer));
     al_register_event_source(evq, al_get_display_event_source(disp));
+    ALLEGRO_BITMAP* rawSpritesheet = al_load_bitmap("resources/img/sometile.png");
+
+    VillainGame::spritesheet testSpritesheet(rawSpritesheet, 32, 16);
+    VillainGame::tile* testTile = testSpritesheet.getTile(1);
 
     bool redraw = true;
     bool stop = false;
@@ -92,8 +105,8 @@ int main(int argc, char* argv[]){
         }
 
         if(redraw && al_is_event_queue_empty(evq)){
-            al_clear_to_color(al_map_rgb(0, 0, 0));
-            al_draw_filled_rectangle(20.5,20.5,99.5,99.5, al_map_rgb(255, 0, 180));
+            al_clear_to_color(al_map_rgb(255, 0, 0));
+            al_draw_bitmap(testTile->draw(), 0, 0, 0);
             al_flip_display();
             redraw = false;
         }

@@ -1,10 +1,18 @@
 #include <allegro5/allegro.h>
 #include <utility>
 #include <cmath>
-#include "../entity.h"
 #include "troop.h"
 
 namespace VillainGame{
+	troop::troop(){
+		entity();
+		moveSpeed = 1;
+		attackRange = 1;
+		attackDamage = 2;
+		attackSpeed = 1500; //ms
+		target = nullptr;
+	}
+
 	int troop::changeMoveSpeed(int moveSpeed){
 		int lastMoveSpeed = this->moveSpeed;
 		this->moveSpeed = moveSpeed;

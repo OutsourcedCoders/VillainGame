@@ -45,3 +45,4 @@
 # Shitty Code Block files
 *.cbp
 *.depend
+*.layout
